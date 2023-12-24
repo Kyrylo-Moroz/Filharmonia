@@ -12,7 +12,6 @@
 <b>Місто: </b>${product.city}<br>
 <b>Автор: </b>${product.author}<br>
 <hr>
-<h3>Видалити товар</h3>
 <form action="/product/delete/${product.id}" method="post">
     <input type="submit" value="Видалити товар "/>
 </form>

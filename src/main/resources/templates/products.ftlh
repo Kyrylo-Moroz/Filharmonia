@@ -4,12 +4,18 @@
     <title>Filharmonia</title>
 </head>
 <body>
-<h1>FILHORMONIA</h1><hr>
+<h1>Filharmonia</h1><hr>
 <h4>Towary</h4>
+<form action="/" method="get">
+    Пошук по назві: <input type="text" name="title"><br>
+    <input type="submit" value="Поиск"/>
+</form>
 <#list products as product>
     <div>
-        <p><b>${product. title}</b> ${product.price} | <a href ="/product/${product.id}">Подробниее...</a></p>
+        <p><b>${product.title}</b> ${product.price} руб. | <a href="/product/${product.id}">Подробніше...</a></p>
     </div>
+<#else>
+    <h3>Товаров нет</h3>
 </#list>
 <hr>
 <h3>Створити новий товар</h3>

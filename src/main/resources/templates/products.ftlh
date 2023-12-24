@@ -19,12 +19,15 @@
 </#list>
 <hr>
 <h3>Створити новий товар</h3>
-<form action="/product/create" method="post">
+<form action="/product/create" method="post" enctype="multipart/form-data">
     Назва: <input type="text" name="title"/><br><br>
     Опис: <input type="text" name="description"/><br><br>
     Ціна: <input type="text" name="price"/><br><br>
     Місто: <input type="text" name="city"/><br><br>
     Автор: <input type="text" name="author"/><br><br>
+    Перша фотографія: <input type="file" name="file1"/><br><br>
+    Друга фотографія: <input type="file" name="file2"/><br><br>
+    Третя фотографія: <input type="file" name="file3"/><br><br>
     <input type="submit" value="Додати товар "/>
 </form>
 </body>

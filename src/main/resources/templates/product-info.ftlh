@@ -6,6 +6,9 @@
 <body>
 <h1>FILHORMONIA</h1><hr>
 <h4>Інформація про товар</h4>
+<#list images as img>
+    <img src="/images/${img.id}" height="60px"/><br><br>
+</#list>
 <b>Назва: </b>${product.title}<br>
 <b>Опис: </b>${product.description}<br>
 <b>Ціна: </b>${product.price}<br>

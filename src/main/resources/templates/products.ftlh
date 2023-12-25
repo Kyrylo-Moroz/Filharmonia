@@ -4,7 +4,11 @@
     <title>Filharmonia</title>
 </head>
 <body>
-<h1>Filharmonia</h1><hr>
+<h1>Filharmonia| <a href="/login">Войти</a></h1><hr>
+<form action ="/logout" method="post">
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="submit" value="Вийти">
+</form>
 <h4>Towary</h4>
 <form action="/" method="get">
     Пошук по назві: <input type="text" name="title"><br>
@@ -12,7 +16,7 @@
 </form>
 <#list products as product>
     <div>
-        <p><b>${product.title}</b> ${product.price} руб. | <a href="/product/${product.id}">Подробніше...</a></p>
+        <p><b>${product.title}</b> ${product.price} pln. | <a href="/product/${product.id}">Подробніше...</a></p>
     </div>
 <#else>
     <h3>Товаров нет</h3>

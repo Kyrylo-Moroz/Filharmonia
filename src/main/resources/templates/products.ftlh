@@ -4,14 +4,20 @@
     <title>Filharmonia</title>
 </head>
 <body>
-<h1>Filharmonia| <a href="/login">Войти</a></h1><hr>
-<form action ="/logout" method="post">
-    <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <input type="submit" value="Вийти">
-</form>
+<h1>Filharmonia</h1><hr>
+<#if user.email??>
+    <h3>Ім'я користувача: <i>${user.name}</i></h3>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="submit" value="Вийти"/>
+    </form>
+<#else>
+    <a href="/login">Войти</a></h1>
+</#if>
+<hr>
 <h4>Towary</h4>
 <form action="/" method="get">
-    Пошук по назві: <input type="text" name="title"><br>
+    Пошук по назві: <input type="text" name="title">
     <input type="submit" value="Поиск"/>
 </form>
 <#list products as product>
@@ -21,18 +27,20 @@
 <#else>
     <h3>Товаров нет</h3>
 </#list>
-<hr>
-<h3>Створити новий товар</h3>
-<form action="/product/create" method="post" enctype="multipart/form-data">
-    Назва: <input type="text" name="title"/><br><br>
-    Опис: <input type="text" name="description"/><br><br>
-    Ціна: <input type="text" name="price"/><br><br>
-    Місто: <input type="text" name="city"/><br><br>
-    Автор: <input type="text" name="author"/><br><br>
-    Перша фотографія: <input type="file" name="file1"/><br><br>
-    Друга фотографія: <input type="file" name="file2"/><br><br>
-    Третя фотографія: <input type="file" name="file3"/><br><br>
-    <input type="submit" value="Додати товар "/>
-</form>
+<#if user.email??>
+    <hr>
+    <h3>Створити новий товар</h3>
+    <form action="/product/create" method="post" enctype="multipart/form-data">
+        Назва: <input type="text" name="title"/><br><br>
+        Опис: <input type="text" name="description"/><br><br>
+        Ціна: <input type="text" name="price"/><br><br>
+        Місто: <input type="text" name="city"/><br><br>
+        Перша фотографія: <input type="file" name="file1"/><br><br>
+        Друга фотографія: <input type="file" name="file2"/><br><br>
+        Третя фотографія: <input type="file" name="file3"/><br><br>
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="submit" value="Додати товар "/>
+    </form>
+</#if>
 </body>
 </html>

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Filharmonia</title>
+    <title>FILHORMONIA</title>
 </head>
 <body>
-<h1>Filharmonia</h1><hr>
+<h1>FILHORMONIA</h1>
+<hr>
 <#if user.email??>
-    <h3>Ім'я користувача: <i>${user.name}</i></h3>
+    <h3>Им'я користувача: <i>${user.name}</i></h3>
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <input type="submit" value="Вийти"/>
+        <input type="submit" value="Выйти"/>
     </form>
+    <#if user.isAdmin()>
+        <a href="/admin">Панель адміністратора</a>
+    </#if>
 <#else>
-    <a href="/login">Войти</a></h1>
+    <a href="/login">Війти</a></h1>
 </#if>
 <hr>
 <h4>Towary</h4>
@@ -22,7 +26,7 @@
 </form>
 <#list products as product>
     <div>
-        <p><b>${product.title}</b> ${product.price} pln. | <a href="/product/${product.id}">Подробніше...</a></p>
+        <p><b>${product.title}</b> ${product.price} pln. | <a href="/product/${product.id}">Детальніше...</a></p>
     </div>
 <#else>
     <h3>Товаров нет</h3>

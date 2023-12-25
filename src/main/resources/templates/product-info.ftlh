@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Filharmonia</title>
+    <title>FILHORMONIA</title>
 </head>
 <body>
 <h1>FILHORMONIA</h1><hr>
@@ -14,6 +14,5 @@
 <b>Ціна: </b>${product.price}<br>
 <b>Город: </b>${product.city}<br>
 <b>Автор: </b>${product.user.name}<br>
-<b>Номер телефона: </b>${product.user.phoneNumber!"недоступний"}<br>
 </body>
 </html>

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +25,12 @@ public class Product {
     private String title;
     @Column(name = "description", columnDefinition = "CLOB")
     private String description;
-    @Column(name = "price")
-    private int price;
+    @Column(name = "vip_ticket_price")
+    private int vipTicketPrice;
+    @Column(name = "normal_ticket_price")
+    private int normalTicketPrice;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Ticket> tickets = new ArrayList<>();
     @Column(name = "city")
     private String city;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
@@ -46,5 +51,12 @@ public class Product {
     public void addImageToProduct(Image image) {
         image.setProduct(this);
         images.add(image);
+    }
+    public int getVipTicketPrice() {
+        return this.vipTicketPrice;
+    }
+
+    public int getNormalTicketPrice() {
+        return this.normalTicketPrice;
     }
 }

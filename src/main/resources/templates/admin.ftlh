@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FILHORMONIA</title>
+    <title>FILHARMONIA</title>
 </head>
 <body>
-<h1>FILHORMONIA</h1>
+<h1>FILHARMONIA</h1>
 <hr>
 <h4>Панель адміністратора</h4>
 <table border="1">

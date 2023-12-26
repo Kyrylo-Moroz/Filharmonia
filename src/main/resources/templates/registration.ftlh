@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FILHORMONIA</title>
+    <title>FILHARMONIA</title>
 </head>
 <body>
-<h1>FILHORMONIA</h1><hr>
+<h1>FILHARMONIA</h1><hr>
 <h4>Регістрація</h4>
 <form action="/registration" method="post">
     Им`я користувача: <input type="text" name="name"><br><br>

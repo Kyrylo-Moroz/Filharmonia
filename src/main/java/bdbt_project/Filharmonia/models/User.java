@@ -39,6 +39,8 @@ public class User implements UserDetails {
     private List<Product> products = new ArrayList<>();
     private LocalDateTime dateOfCreated;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Ticket> tickets = new ArrayList<>();
 
     @PrePersist
     private void init() {

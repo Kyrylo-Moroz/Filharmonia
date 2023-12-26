@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +27,7 @@ public class UserService {
         if (userRepository.findByEmail(email) != null) return false;
         user.setActive(true);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.getRoles().add(Role.ROLE_USER);
+        user.getRoles().add(Role.ROLE_USER);//ROLE.ADMIN FOR CREATE ADMIN
         log.info("Saving new User with email: {}", email);
         userRepository.save(user);
         return true;
@@ -62,4 +63,11 @@ public class UserService {
         }
         userRepository.save(user);
     }
+
+    public User getUserByPrincipal(Principal principal) {
+        if (principal == null) return null; // або throw new UsernameNotFoundException("User not found");
+        String username = principal.getName();
+        return userRepository.findByEmail(username);
+    }
+
 }

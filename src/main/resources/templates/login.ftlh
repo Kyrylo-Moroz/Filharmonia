@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FILHORMONIA</title>
+    <title>FILHARMONIA</title>
 </head>
 <body>
-<h1>FILHORMONIA</h1><hr>
+<h1>FILHARMONIA</h1><hr>
 <h4>Авторизация</h4>
 <form action="/login" method="post">
     Email: <input type="email" name="username"><br><br>

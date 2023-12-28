@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FILHARMONIA</title>
+    <title>PHILHARMONIC</title>
 </head>
 <body>
-<h1>FILHARMONIA</h1><hr>
-<h3>Подробна інформація про користувача: ${user.name}</h3>
-<b>Номер телефону: </b> ${user.phoneNumber}<br>
+<h1>PHILHARMONIC</h1><hr>
+<h3>Detailed information about the user: ${user.name}</h3>
+<b>Phone number: </b> ${user.phoneNumber}<br>
 <b>Email: </b> ${user.email}<br>
-<h4>Придбані білети:</h4>
+<h4>Purchased tickets:</h4>
 <#list user.tickets as ticket>
     <div>
-        <p>Білет: <b>${ticket.type}</b> | Ціна: ${ticket.price} pln. | Продукт: ${ticket.product.title} | Опис: ${ticket.product.description}</p>
+        <p>
+            Ticket: <b>${ticket.type}</b> | Start time: ${ticket.product.start_time} | Price: ${ticket.price} pln. |
+            Product: ${ticket.product.title} | Description: ${ticket.product.description}
+            | <a href="/delete-ticket/${ticket.id}" onclick="return confirm('Are you sure you want to delete this ticket?');">Delete ticket</a>
+        </p>
     </div>
 <#else>
-    <h3>Білетів немає</h3>
+    <h3>There are no tickets</h3>
 </#list>
 <#if errorMessage??>
     <h2 style="color: red">${errorMessage}</h2>

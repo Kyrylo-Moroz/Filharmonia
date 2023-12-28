@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FILHARMONIA</title>
+    <title>PHILHARMONIC</title>
 </head>
 <body>
-<h1>FILHARMONIA</h1>
+<h1>PHILHARMONIC</h1>
 <hr>
-<h4>Панель адміністратора</h4>
+<h4>Administrator Panel</h4>
 <table border="1">
     <tr>
         <th>Email</th>
-        <th>Номер телефону</th>
-        <th>Активність</th>
-        <th>Ролі</th>
-        <th>Бан</th>
-        <th>Редагування</th>
-        <th>Подробна інформація</th>
+        <th>Phone Number</th>
+        <th>Activity</th>
+        <th>Roles</th>
+        <th>Ban</th>
+        <th>Edit</th>
+        <th>Detailed Information</th>
     </tr>
     <#list users as user>
         <tr>
@@ -29,11 +29,11 @@
                     <input type="submit" value="Бан">
                 </form>
             </th>
-            <th><a href="/admin/user/edit/${user.id}">Редагування</a></th>
-            <th><a href="/user/${user.id}">Подробна інформація</a></th>
+            <th><a href="/admin/user/edit/${user.id}">Edit</a></th>
+            <th><a href="/user/${user.id}">Detailed Information</a></th>
         </tr>
     <#else>
-        <h3>Користувачів немає</h3>
+        <h3>No users found</h3>
     </#list>
 </table>
 </body>

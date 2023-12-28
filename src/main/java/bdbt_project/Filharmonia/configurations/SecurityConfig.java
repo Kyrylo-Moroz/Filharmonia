@@ -27,11 +27,11 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin(login -> login
-                        .loginPage("/login") // Своя сторінка входу
-                        .defaultSuccessUrl("/") // Сторінка після успішного входу
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/")
                         .permitAll())
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/").permitAll()); // Сторінка після виходу
+                        .logoutSuccessUrl("/").permitAll());
 
         return http.build();
     }

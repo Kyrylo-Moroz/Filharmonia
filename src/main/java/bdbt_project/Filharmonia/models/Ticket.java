@@ -27,7 +27,7 @@ public class Ticket {
     private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id") // Змініть назву стовпця відповідно до вашої БД
+    @JoinColumn(name = "user_id")
     private User user;
 
     public void setPrice(int price) {

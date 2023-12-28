@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FILHARMONIA</title>
+    <title>PHILHARMONIC</title>
 </head>
 <body>
-<h1>FILHARMONIA</h1>
+<h1>PHILHARMONIC</h1>
 <hr>
 <#if user.email??>
-    <h3>Им'я користувача: <i>${user.name}</i></h3>
+    <h3>Username: <i>${user.name}</i></h3>
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <input type="submit" value="Выйти"/>
+        <input type="submit" value="Log out"/>
     </form>
     <#if user.isAdmin()>
-        <a href="/admin">Панель адміністратора</a>
+        <a href="/admin">Admin panel</a>
+    <#else>
+        <a href="/user/${user.id}">My profile</a>
     </#if>
+
 <#else>
-    <a href="/login">Війти</a></h1>
+    <a href="/login">Login</a></h1>
 </#if>
 <hr>
-<h4>Towary</h4>
+<h4>Products</h4>
 <form action="/" method="get">
-    Пошук по назві: <input type="text" name="title">
-    <input type="submit" value="Поиск"/>
+    Search by name: <input type="text" name="title">
+    <input type="submit" value="Search"/>
 </form>
 <#list products as product>
     <div>
-        <p><b>${product.title}</b> normal ${product.normalTicketPrice} pln. VIP ${product.vipTicketPrice} pln. | <a href="/product/${product.id}">Детальніше...</a></p>
+        <p><b>${product.title}</b> | Start time: ${product.start_time} | normal ${product.normalTicketPrice} pln. | VIP ${product.vipTicketPrice} pln. | <a href="/product/${product.id}">More details...</a></p>
     </div>
 <#else>
-    <h3>Товаров нет</h3>
+    <h3>There are no products</h3>
 </#list>
 <#if user.isAdmin()>
     <#if user.email??>
         <hr>
-        <h3>Створити новий товар</h3>
+        <h3>Create a new product</h3>
         <form action="/product/create" method="post" enctype="multipart/form-data">
-            Назва: <input type="text" name="title"/><br><br>
-            Опис: <input type="text" name="description"/><br><br>
-            Ціна normal: <input type="text" name="normalTicketPrice"/><br><br>
-            Ціна VIP: <input type="text" name="vipTicketPrice"/><br><br>
-            Місто: <input type="text" name="city"/><br><br>
-            Перша фотографія: <input type="file" name="file1"/><br><br>
-            Друга фотографія: <input type="file" name="file2"/><br><br>
-            Третя фотографія: <input type="file" name="file3"/><br><br>
+            Product name: <input type="text" name="title"/><br><br>
+            Description: <input type="text" name="description"/><br><br>
+            Start time: <input type="time" name="start_time"/><br><br>
+            End time: <input type="time" name="end_time"/><br><br>
+            Price normal: <input type="text" name="normalTicketPrice"/><br><br>
+            Price VIP: <input type="text" name="vipTicketPrice"/><br><br>
+            City: <input type="text" name="city"/><br><br>
+            The first photo: <input type="file" name="file1"/><br><br>
+            Second photo: <input type="file" name="file2"/><br><br>
+            The third photo: <input type="file" name="file3"/><br><br>
             <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <input type="submit" value="Додати товар "/>
+            <input type="submit" value="Add product"/>
         </form>
     </#if>
 </#if>

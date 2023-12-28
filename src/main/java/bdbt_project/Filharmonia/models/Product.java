@@ -23,6 +23,10 @@ public class Product {
     private Long id;
     @Column(name = "title")
     private String title;
+    @Column(name = "start_time")
+    private String start_time;
+    @Column(name = "end_time")
+    private String end_time;
     @Column(name = "description", columnDefinition = "CLOB")
     private String description;
     @Column(name = "vip_ticket_price")

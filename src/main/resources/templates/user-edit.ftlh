@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FILHARMONIA</title>
+    <title>PHILHARMONIC</title>
 </head>
 <body>
 <h1>FILHARMONIA</h1><hr>
-<h3>Редагування користувача: ${user.name}</h3>
+<h3>Editing a user: ${user.name}</h3>
 <form action="/admin/user/edit" method="post">
     <#list roles as role>
         <div>
@@ -14,7 +14,7 @@
     </#list>
     <input type="hidden" value="${user.id}" name="userId">
     <input type="hidden" value="${_csrf.token}" name="_csrf">
-    <button type="submit">Сохранить</button>
+    <button type="submit">Save</button>
 </form>
 </body>
 </html>

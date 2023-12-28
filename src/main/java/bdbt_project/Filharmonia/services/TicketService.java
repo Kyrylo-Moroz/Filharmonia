@@ -15,9 +15,12 @@ public class TicketService {
 
     public void save(Ticket ticket) {
         ticketRepository.save(ticket);
-        log.info("Білет з ID {} було збережено.", ticket.getId());
+        log.info("Ticket with ID {} has been saved.", ticket.getId());
     }
 
-    // Можливо додаткові методи для роботи з білетами, якщо потрібно
+    public void deleteById(Long ticketId) {
+        ticketRepository.deleteById(ticketId);
+        log.info("Ticket with ID {} has been deleted.", ticketId);
+    }
 }
 

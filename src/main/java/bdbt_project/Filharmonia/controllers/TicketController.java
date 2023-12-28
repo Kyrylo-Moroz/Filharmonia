@@ -8,6 +8,8 @@ import bdbt_project.Filharmonia.services.TicketService;
 import bdbt_project.Filharmonia.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -42,14 +44,17 @@ public class TicketController {
             ticket.setType("NORMAL");
         }
 
-        // Збереження білета
         ticketService.save(ticket);
-
-        // Додавання повідомлення про успішну покупку
         redirectAttributes.addFlashAttribute("success", "Квиток успішно придбано!");
-
-        // Перенаправлення на початкову сторінку
         return "redirect:/";
+    }
+
+    @GetMapping("/delete-ticket/{ticketId}")
+    public String deleteTicket(@PathVariable Long ticketId, Principal principal, RedirectAttributes redirectAttributes) {
+        User user = userService.getUserByPrincipal(principal);
+        ticketService.deleteById(ticketId);
+        redirectAttributes.addFlashAttribute("successMessage", "Квиток успішно видалено.");
+        return "redirect:/user/" + user.getId();
     }
 
 }

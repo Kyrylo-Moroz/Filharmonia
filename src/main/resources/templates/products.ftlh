@@ -29,7 +29,18 @@
 </form>
 <#list products as product>
     <div>
-        <p><b>${product.title}</b> | Start time: ${product.start_time} | normal ${product.normalTicketPrice} pln. | VIP ${product.vipTicketPrice} pln. | <a href="/product/${product.id}">More details...</a></p>
+        <p>
+            <b>${product.title}</b> | Start time: ${product.start_time} |
+            Price normal: ${product.normalTicketPrice} pln. |
+            Price VIP: ${product.vipTicketPrice} pln. |
+            <a href="/product/${product.id}">More details...</a>
+            <#if user.isAdmin()>
+        <form action="/product/delete/${product.id}" method="post" style="display: inline;">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <button type="submit" onclick="return confirm('Are you sure you want to delete this product?');">Delete</button>
+        </form>
+        </#if>
+        </p>
     </div>
 <#else>
     <h3>There are no products</h3>

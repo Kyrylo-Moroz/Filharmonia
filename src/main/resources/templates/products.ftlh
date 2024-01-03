@@ -44,25 +44,33 @@
     </div>
 <#else>
     <h3>There are no products</h3>
+    <a href="/">Back</a>
 </#list>
 <#if user.isAdmin()>
     <#if user.email??>
         <hr>
         <h3>Create a new product</h3>
-        <form action="/product/create" method="post" enctype="multipart/form-data">
-            Product name: <input type="text" name="title"/><br><br>
-            Description: <input type="text" name="description"/><br><br>
-            Start time: <input type="time" name="start_time"/><br><br>
-            End time: <input type="time" name="end_time"/><br><br>
-            Price normal: <input type="text" name="normalTicketPrice"/><br><br>
-            Price VIP: <input type="text" name="vipTicketPrice"/><br><br>
-            City: <input type="text" name="city"/><br><br>
-            The first photo: <input type="file" name="file1"/><br><br>
-            Second photo: <input type="file" name="file2"/><br><br>
-            The third photo: <input type="file" name="file3"/><br><br>
+        <form action="/product/create" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            Product name: <input type="text" name="title" onkeydown="return event.key !== 'Enter'"/><br><br>
+            Description: <input type="text" name="description" onkeydown="return event.key !== 'Enter'"/><br><br>
+            Start time: <input type="time" name="start_time" onkeydown="return event.key !== 'Enter'"/><br><br>
+            End time: <input type="time" name="end_time" onkeydown="return event.key !== 'Enter'"/><br><br>
+            Price normal: <input type="text" name="normalTicketPrice" onkeydown="return event.key !== 'Enter'"/><br><br>
+            Price VIP: <input type="text" name="vipTicketPrice" onkeydown="return event.key !== 'Enter'"/><br><br>
+            City: <input type="text" name="city" onkeydown="return event.key !== 'Enter'"/><br><br>
+            The first photo: <input type="file" name="file1" onkeydown="return event.key !== 'Enter'"/><br><br>
+            Second photo: <input type="file" name="file2" onkeydown="return event.key !== 'Enter'"/><br><br>
+            The third photo: <input type="file" name="file3" onkeydown="return event.key !== 'Enter'"/><br><br>
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <input type="submit" value="Add product"/>
         </form>
+
+        <script>
+            function validateForm() {
+                // Tutaj możesz dodać dodatkową walidację, jeśli to konieczne
+                return true;
+            }
+        </script>
     </#if>
 </#if>
 </body>

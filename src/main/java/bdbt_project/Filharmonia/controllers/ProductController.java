@@ -29,6 +29,10 @@ public class ProductController {
     @GetMapping("/product/{id}")
     public String productInfo(@PathVariable Long id, Model model) {
         Product product = productService.getProductById(id);
+        if (product == null){
+            model.addAttribute("errorMessage", "Produkt o danym id nie istnieje");
+            return "productNotFound";
+        }
         model.addAttribute("product", product);
         model.addAttribute("images", product.getImages());
         return "product-info";

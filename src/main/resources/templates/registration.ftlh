@@ -36,6 +36,12 @@
             display: inline-block;
             text-align: center;
         }
+        .submit-button:hover {
+            background-color: #226d23;
+        }
+        .back-to-login-button:hover {
+            background-color: #226d23;
+        }
 
         .back-to-login-button {
             background-color: #555;
@@ -74,6 +80,10 @@
             background-color: #4CAF50;
             color: white;
         }
+        h1 {
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>

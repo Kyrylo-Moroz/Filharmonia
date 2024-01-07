@@ -28,7 +28,7 @@
             background-color: #4CAF50;
             color: white;
             padding: 14px 20px;
-            margin: 8px 0;
+            margin: 0 0;
             border: none;
             cursor: pointer;
             width: 100%;
@@ -39,13 +39,40 @@
 
         .back-to-login-button {
             background-color: #555;
+            width: 87%;
             margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .error-message {
             color: red;
             text-align: center;
             margin-top: 10px;
+        }
+
+        .toggle-password {
+            position: relative;
+            margin-left: 310px;
+            top: -45px;
+            cursor: pointer;
+        }
+
+        .toggle-password input {
+            display: none;
+        }
+
+        .toggle-password label {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .toggle-password input:checked + label {
+            background-color: #4CAF50;
+            color: white;
         }
     </style>
 </head>
@@ -58,7 +85,11 @@
         Username: <input type="text" name="name" required><br>
         Email: <input type="email" name="email" required><br>
         Phone number: <input type="tel" name="phoneNumber" placeholder="XXX-XXX-XXX" pattern="+48 \[0-9]{3}[0-9]{3}[0-9]{3}" maxlength="12" required><br>
-        Password: <input type="password" name="password" required><br>
+        Password: <input type="password" id="password" name="password" required>
+        <div class="toggle-password">
+            <input type="checkbox" id="show-password">
+            <label for="show-password">&#10004;</label>
+        </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <input type="submit" class="submit-button" value="Register"/>
     </form>
@@ -67,5 +98,15 @@
         <div class="error-message">${errorMessage}</div>
     </#if>
 </div>
+<script>
+    document.getElementById('show-password').addEventListener('change', function(e) {
+        var passwordInput = document.getElementById('password');
+        if (e.target.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+</script>
 </body>
 </html>

@@ -6,17 +6,6 @@
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">BDBT Spring Boot Project - Part II</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
 <div class="container">
     <div class="row">
         <div class="col-md-4 mt-5">
@@ -25,13 +14,10 @@
                     <div><b><p style="font-size:30px">Error</p></b></div>
                     <div><p style="font-size:24px">500 – Internal Server Error</p></div>
                 </div>
-                <button class="btn btn-primary" type="submit" value="Sign In">Back to home page</button>
+                <button class="btn btn-primary" type="button" onclick="window.location.href='/';">Back to home page</button>
             </form>
         </div>
     </div>
 </div>
-<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 </html>

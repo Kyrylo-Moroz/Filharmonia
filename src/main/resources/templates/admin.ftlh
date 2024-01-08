@@ -60,7 +60,7 @@
     </style>
 </head>
 <body>
-<h1>PHILHARMONIC</h1>
+<h1><a href="/" style="text-decoration: none; color: inherit;">PHILHARMONIC</a></h1>
 <hr>
 <h4>Administrator Panel</h4>
 <table>

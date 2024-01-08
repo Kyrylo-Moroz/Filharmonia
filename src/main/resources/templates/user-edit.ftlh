@@ -4,7 +4,7 @@
     <title>PHILHARMONIC</title>
 </head>
 <body>
-<h1>FILHARMONIA</h1><hr>
+<h1><a href="/" style="text-decoration: none; color: inherit;">PHILHARMONIC</a></h1>
 <h3>Editing a user: ${user.name}</h3>
 <form action="/admin/user/edit" method="post">
     <#list roles as role>

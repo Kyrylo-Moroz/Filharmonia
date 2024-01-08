@@ -88,7 +88,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>PHILHARMONIC</h1>
+    <h1><a href="/" style="text-decoration: none; color: inherit;">PHILHARMONIC</a></h1>
     <hr>
     <h4>Registration</h4>
     <form action="/registration" method="post">

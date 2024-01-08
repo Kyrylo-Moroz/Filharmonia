@@ -5,13 +5,20 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
         }
 
         .container {
             width: 300px;
             margin: auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        input[type="text"],
         input[type="email"],
         input[type="password"] {
             width: 100%;
@@ -37,14 +44,6 @@
             background-color: #226d23;
         }
 
-        .back-to-registration {
-            text-decoration: underline;
-            color: #226d23;
-            cursor: pointer;
-            text-align: center;
-            display: block;
-            margin-top: 15px;
-        }
 
         .error-message {
             color: red;
@@ -54,7 +53,7 @@
 
         .toggle-password {
             position: relative;
-            margin-left: 310px;
+            margin-left: 270px;
             top: -45px;
             cursor: pointer;
         }
@@ -77,6 +76,14 @@
         }
         h1 {
             text-align: center;
+        }
+        .back-to-registration {
+            text-decoration: underline;
+            color: #226d23;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            margin-top: 15px;
         }
 
     </style>

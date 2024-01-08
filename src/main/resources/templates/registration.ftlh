@@ -5,11 +5,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
         }
 
         .container {
             width: 300px;
             margin: auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         input[type="text"],
@@ -59,7 +65,7 @@
 
         .toggle-password {
             position: relative;
-            margin-left: 310px;
+            margin-left: 270px;
             top: -45px;
             cursor: pointer;
         }

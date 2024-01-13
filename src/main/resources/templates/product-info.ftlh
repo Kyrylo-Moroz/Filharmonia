@@ -17,17 +17,13 @@
         .left-side {
             flex: 1;
             padding: 20px;
-            color: #000; /* Zmieniłem kolor tekstu na czarny */
+            color: #000;
         }
 
         .right-side {
             flex: 1;
             padding: 20px;
             text-align: right;
-        }
-
-        .mySlides {
-            display: none;
         }
 
         img {

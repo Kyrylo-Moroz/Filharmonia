@@ -29,7 +29,7 @@
         }
 
         .submit-button {
-            background-color: #4CAF50;
+            background-color: #83014d;
             color: white;
             padding: 14px 20px;
             margin: 0 0;
@@ -41,7 +41,7 @@
             text-align: center;
         }
         .submit-button:hover {
-            background-color: #226d23;
+            background-color: #560c37;
         }
 
 
@@ -71,7 +71,7 @@
         }
 
         .toggle-password input:checked + label {
-            background-color: #4CAF50;
+            background-color: #83014d;
             color: white;
         }
         h1 {
@@ -79,7 +79,7 @@
         }
         .back-to-registration {
             text-decoration: underline;
-            color: #226d23;
+            color: #560c37;
             cursor: pointer;
             text-align: center;
             display: block;

@@ -7,10 +7,10 @@
     <style>
         body {
             background-color: #f8f9fa;
-        }
-
-        .container {
-            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
 
         .error-form {
@@ -24,17 +24,15 @@
         .error-heading {
             font-size: 30px;
             font-weight: bold;
-            color: #83014d;
         }
 
         .error-message {
             font-size: 24px;
-            color: #83014d;
         }
 
         .back-button {
             margin-top: 20px;
-            background-color: #007bff;
+            background-color: #4CAF50;
             color: #ffffff;
             border: none;
             padding: 10px 20px;
@@ -43,7 +41,7 @@
         }
 
         .back-button:hover {
-            background-color: #0056b3;
+            background-color: #226d23;
         }
     </style>
 </head>

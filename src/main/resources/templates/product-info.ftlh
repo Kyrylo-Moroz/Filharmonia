@@ -9,7 +9,7 @@
             font-family: 'Raleway', Arial, Helvetica, sans-serif;
             margin: 20px;
             text-align: left;
-            background: #f8f8f8;
+            background: #FFFAF0;
             display: flex;
             justify-content: space-between;
         }

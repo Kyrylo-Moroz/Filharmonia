@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #FFFAF0;
             margin: 20px;
             text-align: center;
         }
@@ -140,7 +140,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f8f9fa;
+            background-color: #FFFAF0;
             padding: 10px;
         }
 
@@ -200,7 +200,7 @@
 <#if user.isAdmin()>
     <#if user.email??>
         <hr>
-        <h3>Create a new product</h3>
+        <h3><a href="javascript:void(0);" onclick="return false;">Create a new product</a></h3>
         <form action="/product/create" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
             Product name: <input type="text" name="title" onkeydown="return event.key !== 'Enter'"/><br><br>
             Description: <input type="text" name="description" onkeydown="return event.key !== 'Enter'"/><br><br>

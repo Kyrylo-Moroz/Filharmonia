@@ -9,7 +9,7 @@
             font-family: 'Raleway', Arial, Helvetica, sans-serif;
             margin: 20px;
             text-align: center;
-            background: #f8f8f8;
+            background: #FFFAF0;
         }
 
         hr{
@@ -31,7 +31,7 @@
     <div>
         <p>
             Ticket: <b>${ticket.type}</b> | Start time: ${ticket.product.start_time} | Price: ${ticket.price} pln. |
-            Product: ${ticket.product.title} | Description: ${ticket.product.description}
+            Product: ${ticket.product.title}
             | <a href="/delete-ticket/${ticket.id}" onclick="return confirm('Are you sure you want to delete this ticket?');">Delete ticket</a>
         </p>
     </div>

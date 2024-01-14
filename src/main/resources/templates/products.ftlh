@@ -161,7 +161,6 @@
             <#if user.isAdmin()>
                 <a href="/admin" class="admin-link">Admin panel</a>
             <#else>
-                <a href="/user/${user.id}" class="profile-link">My profile</a>
             </#if>
         <#else>
             <a href="/login" class="login-link">Login</a></h3>

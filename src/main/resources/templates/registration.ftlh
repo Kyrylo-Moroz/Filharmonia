@@ -100,7 +100,7 @@
     <form action="/registration" method="post">
         Username: <input type="text" name="name" required><br>
         Email: <input type="email" name="email" required><br>
-        Phone number: <input type="tel" name="phoneNumber" placeholder="XXX-XXX-XXX" pattern="+48 \[0-9]{3}[0-9]{3}[0-9]{3}" maxlength="12" required><br>
+        Phone number: <input type="tel" name="phoneNumber" placeholder="XXX-XXX-XXX" pattern="[0-9]+" maxlength="9" required><br>
         Password: <input type="password" id="password" name="password" required>
         <div class="toggle-password">
             <input type="checkbox" id="show-password">

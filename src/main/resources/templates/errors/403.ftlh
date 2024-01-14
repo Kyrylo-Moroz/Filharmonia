@@ -8,15 +8,9 @@
         body {
             background-color: #f8f9fa;
             display: flex;
-            align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
-        }
-
-        .container {
-            margin-top: 50px;
-            flex: 1;
         }
 
         .error-form {

@@ -31,7 +31,7 @@
 
         .submit-button,
         .back-to-login-button {
-            background-color: #83014d;
+            background-color: #28a745;
             color: white;
             padding: 14px 20px;
             margin: 0 0;
@@ -43,10 +43,10 @@
             text-align: center;
         }
         .submit-button:hover {
-            background-color: #560c37;
+            background-color: #218838;
         }
         .back-to-login-button:hover {
-            background-color: #560c37;
+            background-color: #218838;
         }
 
         .back-to-login-button {
@@ -83,7 +83,7 @@
         }
 
         .toggle-password input:checked + label {
-            background-color: #83014d;
+            background-color: #28a745;
             color: white;
         }
         h1 {

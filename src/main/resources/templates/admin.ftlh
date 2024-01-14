@@ -32,7 +32,7 @@
         }
 
         th {
-            background-color: #83014d;
+            background-color: #218838;
             color: #ffffff;
         }
 

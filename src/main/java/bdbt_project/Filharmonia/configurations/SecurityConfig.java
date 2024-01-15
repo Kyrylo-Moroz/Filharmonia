@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -31,7 +31,13 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/")
                         .permitAll())
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/").permitAll());
+                        .logoutSuccessUrl("/logout").permitAll())
+                // Додаємо налаштування для сесії
+                .sessionManagement(session -> session
+                        .invalidSessionUrl("/")
+                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                        .sessionFixation().migrateSession()
+                        .maximumSessions(1).expiredUrl("/login?expired=true").maxSessionsPreventsLogin(true));
 
         return http.build();
     }

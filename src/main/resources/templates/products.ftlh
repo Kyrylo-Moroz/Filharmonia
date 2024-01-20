@@ -202,16 +202,16 @@
         <hr>
         <h3><a href="javascript:void(0);" onclick="return false;">Create a new product</a></h3>
         <form action="/product/create" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
-            Product name: <input type="text" name="title" onkeydown="return event.key !== 'Enter'"/><br><br>
-            Description: <input type="text" name="description" onkeydown="return event.key !== 'Enter'"/><br><br>
-            Start time: <input type="time" name="start_time" onkeydown="return event.key !== 'Enter'"/><br><br>
-            End time: <input type="time" name="end_time" onkeydown="return event.key !== 'Enter'"/><br><br>
-            Price normal: <input type="text" name="normalTicketPrice" onkeydown="return event.key !== 'Enter'"/><br><br>
-            Price VIP: <input type="text" name="vipTicketPrice" onkeydown="return event.key !== 'Enter'"/><br><br>
-            City: <input type="text" name="city" onkeydown="return event.key !== 'Enter'"/><br><br>
-            The first photo: <input type="file" name="file1" onkeydown="return event.key !== 'Enter'"/><br><br>
-            Second photo: <input type="file" name="file2" onkeydown="return event.key !== 'Enter'"/><br><br>
-            The third photo: <input type="file" name="file3" onkeydown="return event.key !== 'Enter'"/><br><br>
+            Product name: <input type="text" name="title" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            Description: <input type="text" name="description" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            Start time: <input type="time" name="start_time" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            End time: <input type="time" name="end_time" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            Price normal: <input type="text" name="normalTicketPrice" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            Price VIP: <input type="text" name="vipTicketPrice" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            City: <input type="text" name="city" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            The first photo: <input type="file" name="file1" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            Second photo: <input type="file" name="file2" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            The third photo: <input type="file" name="file3" onkeydown="return event.key !== 'Enter'" required/><br><br>
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <input type="submit" value="Add product"/>
         </form>

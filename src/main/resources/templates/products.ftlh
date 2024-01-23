@@ -210,8 +210,8 @@
             Price VIP: <input type="text" name="vipTicketPrice" onkeydown="return event.key !== 'Enter'" required/><br><br>
             City: <input type="text" name="city" onkeydown="return event.key !== 'Enter'" required/><br><br>
             The first photo: <input type="file" name="file1" onkeydown="return event.key !== 'Enter'" required/><br><br>
-            Second photo: <input type="file" name="file2" onkeydown="return event.key !== 'Enter'" required/><br><br>
-            The third photo: <input type="file" name="file3" onkeydown="return event.key !== 'Enter'" required/><br><br>
+            Second photo: <input type="file" name="file2" onkeydown="return event.key !== 'Enter'"/><br><br>
+            The third photo: <input type="file" name="file3" onkeydown="return event.key !== 'Enter'"/><br><br>
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <input type="submit" value="Add product"/>
         </form>
